@@ -6,10 +6,11 @@ import SideNav from './components/SideNav';
 import HomeContent from './components/HomeContent';
 
 function App() {
+  const [view, setView] = useState('home');
   return (
-    <div>
-      <SideNav />
-      <HomeContent />
+    <div id="app">
+      <SideNav setView={setView} />
+      {view === 'home' ? <HomeContent /> : null}
     </div>
   );
 }

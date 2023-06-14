@@ -1,0 +1,44 @@
+:root {
+    --font: Oxygen, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font);
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 5rem auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "sidenav content content content content"
+    "sidenav content content content content"
+    "sidenav content content content content"
+    "sidenav content content content content";
+    height: 100vh;
+}
+
+#sidenav {
+    grid-area: sidenav;
+    background-color: lightblue;
+}
+
+.content {
+    grid-area: content;
+    background-color: lightgray;
+}
+
+button:hover {
+    cursor: pointer;
+}

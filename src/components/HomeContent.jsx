@@ -1,8 +1,10 @@
 // external imports:
 import { useState } from 'react';
 
-// imported modules:
+// internal modules:
 import { getName } from '../modules/storage.js';
+
+import '../styles/content.css';
 
 export default function HomeContent() {
   const [username, setUsername] = useState(getName());
@@ -18,7 +20,7 @@ export default function HomeContent() {
 
   if (username === 'undefined' || username === null) {
     return (
-      <div>
+      <div className="content">
         <h1>Welcome home.</h1>
         <form onSubmit={storeName}>
           <input
@@ -31,7 +33,7 @@ export default function HomeContent() {
     );
   } else {
     return (
-      <div>
+      <div className="content">
         <h1>Welcome home</h1>
         <h2>{username}</h2>
       </div>
